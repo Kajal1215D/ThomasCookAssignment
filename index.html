@@ -1,0 +1,48 @@
+<!-- Print list of hotels on a page using knockout.js. 
+There will be one delete button against each hotel.
+On click of delete button remove hotel from page. 
+You need to submit it by tomorrow EOD.
+
+Hotel will have attribute such as hotel id,hotel name, price,locations,etc.
+You can get list of hotels from pre defined array of objects, from json file or db. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HotelList</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <table class="table table-hover" >
+        <thead>
+            <tr>
+                <th>Hotel ID</th>
+                <th>Hotel Name</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th> <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true" ></span></th>
+            </tr>
+        </thead> 
+            <tbody data-bind="foreach: HotelArrayList">
+                <tr>
+                    <td> <span data-bind="text: Hotel_Id"></span> </td>
+                    <td> <span data-bind="text: Hotel_Name"></span></td>
+                    <td> <span data-bind="text: Hotel_Price"></span></td>
+                    <td> <span data-bind="text: Location"></span> </td>
+                    <td>
+                    <button type="button" class="btn btn-danger btn-xs">
+                            <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true" data-bind="click: $root.deleteHotel"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody> 
+        </table> 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="knockout-3.5.1.js"></script>
+    <script src="hotelcrud.js"></script>
+</body>
+</html>
